@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Ejemplo03_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ejemplo01_Encapsulacion
 {
-    public class Coche
+    public class Coche : INombrable
     {
         float velocidad;
         float precio;
@@ -16,9 +17,11 @@ namespace Ejemplo01_Encapsulacion
         public string Marca { get; set; }
         public float Precio { set { if (value >= 0) this.precio = value; else precio = 0; } }
 
+        public string Nombre { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public virtual void Acelerar() { velocidad++; }
 
-        public Coche(string modelo, string marca, float precio)
+        public Coche(string marca, string modelo, float precio)
         {
             Modelo = modelo;
             Marca = marca;
@@ -45,6 +48,16 @@ namespace Ejemplo01_Encapsulacion
         public override string ToString()
         {
             return Modelo + " " + Marca + " " + precio;
+        }
+
+        public string GetNombre()
+        {
+            return Marca + " - " + Modelo;
+        }
+
+        public void SetNombre(string unNombre)
+        {
+            throw new NotImplementedException();
         }
     }
 }

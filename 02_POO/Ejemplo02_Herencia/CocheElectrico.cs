@@ -5,14 +5,14 @@ using Ejemplo01_Encapsulacion;
 
 namespace Ejemplo02_Herencia
 {
-    class CocheElectrico : Coche
+    public class CocheElectrico : Coche
     {
         double nivelBateria;
 
         public double NivelBateria { get => nivelBateria; set => nivelBateria = value; }
 
 
-        public CocheElectrico(string modelo, string marca, float precio, double nivelBateria) : base(modelo, marca, precio)
+        public CocheElectrico(string marca, string modelo, float precio, double nivelBateria) : base(marca, modelo, precio)
         {
             Modelo = modelo;
             Marca = marca;
