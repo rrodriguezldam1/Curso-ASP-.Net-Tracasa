@@ -28,33 +28,11 @@ namespace Ejercicio02_Herencia
         }
 
         public override void InsertarDatos() {
+            base.InsertarDatos();
             string linea;
-            string[] cadena = new string[4];
-
-            for (int i = 0; i < cadena.Length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        Console.WriteLine("Inserte Nombre: ");
-                        break;
-                    case 1:
-                        Console.WriteLine("Inserte Edad: ");
-                        break;
-                    case 2:
-                        Console.WriteLine("Inserte altura: ");
-                        break;
-                    case 3:
-                        Console.WriteLine("Inserte salario: ");
-                        break;
-                }
-                linea = Console.ReadLine();
-                cadena[i] = linea.Trim();
-            }
-            Nombre = cadena[0];
-            Edad = int.Parse(cadena[1]);
-            Altura = float.Parse(cadena[2]);
-            Salario = int.Parse(cadena[3]);
+            Console.WriteLine("Inserte salario: ");
+            linea = Console.ReadLine();
+            Salario = int.Parse(linea.Trim());
         }
 
         public override void MostrarDatos()

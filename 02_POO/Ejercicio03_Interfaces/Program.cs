@@ -32,28 +32,40 @@ namespace Ejercicio03_Interfaces
 
             Usuario user3 = new Usuario("Ramon", 22, 1.75f);
             user3.MostrarDatos();
+            Console.WriteLine();
             user3.InsertarDatos();
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------------------");
             user3.MostrarDatos();
-
+            Console.WriteLine("-----------------------------------------------------");
             Console.WriteLine();
 
             Empleado emp3 = new Empleado("Ramon", 22, 1.75f, 24500);
             emp3.MostrarDatos();
+            Console.WriteLine();
             emp3.InsertarDatos();
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------");
             emp3.MostrarDatos();
-
+            Console.WriteLine("----------------------------------------------------");
             Console.WriteLine();
 
             Coche car3 = new Coche("Peugeot", "407", 22000f);
             car3.MostrarDatos();
+            Console.WriteLine();
             car3.InsertarDatos();
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------");
             car3.MostrarDatos();
-
+            Console.WriteLine("----------------------------------------------------");
             Console.WriteLine();
 
             CocheElectrico carE3 = new CocheElectrico("Peugeot", "407", 22000f, 100.0);
             carE3.MostrarDatos();
+            Console.WriteLine();
             carE3.InsertarDatos();
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------------------------");
             carE3.MostrarDatos();
         }
     }

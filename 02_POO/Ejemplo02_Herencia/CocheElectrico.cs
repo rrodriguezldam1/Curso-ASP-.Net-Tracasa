@@ -39,33 +39,11 @@ namespace Ejemplo02_Herencia
 
         public override void InsertarDatos()
         {
+            base.InsertarDatos();
+            Console.WriteLine("Inserte Nivel batería: ");
             string linea;
-            string[] cadena = new string[4];
-
-            for (int i = 0; i < cadena.Length; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        Console.WriteLine("Inserte Marca: ");
-                        break;
-                    case 1:
-                        Console.WriteLine("Inserte Modelo: ");
-                        break;
-                    case 2:
-                        Console.WriteLine("Inserte Precio: ");
-                        break;
-                    case 3:
-                        Console.WriteLine("Inserte Nivel de batería: ");
-                        break;
-                }
-                linea = Console.ReadLine();
-                cadena[i] = linea.Trim();
-            }
-            Marca = cadena[0];
-            Modelo = cadena[1];
-            Precio = float.Parse(cadena[2]);
-            NivelBateria = double.Parse(cadena[3]);
+            linea = Console.ReadLine();
+            NivelBateria = double.Parse(linea.Trim());
         }
     }
 }
