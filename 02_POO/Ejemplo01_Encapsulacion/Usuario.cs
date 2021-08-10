@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Ejemplo03_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ejemplo01_Encapsulacion
 {
 
-    public class Usuario
+    public class Usuario : INombrable, IShowable
     {
-        string nombre;
+        string nombre;                                                                                                                                                                                  
         int edad;
         float altura;
 
@@ -32,6 +33,51 @@ namespace Ejemplo01_Encapsulacion
         public override string ToString()
         {
             return "Usuario: " + Nombre + " Edad: " + Edad + " Altura: " + Altura + " m";
+        }
+
+        public string GetNombre()
+        {
+            return Nombre;
+        }
+
+        public void SetNombre(string unNombre)
+        {
+            if (!string.IsNullOrEmpty(unNombre))
+            {
+                Nombre = unNombre;
+            }
+        }
+
+        public virtual void MostrarDatos()
+        {
+            Console.WriteLine(ToString());
+        }
+
+        public virtual void InsertarDatos()
+        {
+            string linea;
+            string[] cadena = new string[3];
+
+            for (int i = 0; i < cadena.Length; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        Console.WriteLine("Inserte Nombre: ");
+                        break;
+                    case 1:
+                        Console.WriteLine("Inserte Edad: ");
+                        break;
+                    case 2:
+                        Console.WriteLine("Inserte altura: ");
+                        break;
+                }
+                linea = Console.ReadLine();
+                cadena[i] = linea.Trim();
+            }
+            Nombre = cadena[0];
+            Edad = int.Parse(cadena[1]);
+            Altura = float.Parse(cadena[2]);
         }
     }
 }

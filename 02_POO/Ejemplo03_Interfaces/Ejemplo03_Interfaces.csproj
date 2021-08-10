@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ejemplo01_Encapsulacion\Ejemplo01_Encapsulacion.csproj" />
     <ProjectReference Include="..\Ejemplo02_Herencia\Ejemplo02_Herencia.csproj" />
+    <ProjectReference Include="..\Ejercicio02_Herencia\Ejercicio02_Herencia.csproj" />
   </ItemGroup>
 
 </Project>

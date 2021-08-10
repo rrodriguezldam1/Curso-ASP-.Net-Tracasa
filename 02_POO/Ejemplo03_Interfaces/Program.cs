@@ -1,5 +1,6 @@
 ﻿using Ejemplo01_Encapsulacion;
 using Ejemplo02_Herencia;
+using Ejercicio02_Herencia;
 using System;
 
 
@@ -21,6 +22,19 @@ namespace Ejemplo03_Interfaces
             {
                 Console.WriteLine(obj.ToString());
             }
+
+            ((Coche)popurri[0]).SetNombre("FIAT - PUNTO 4.5");
+            Coche fiatPunto = (Coche) popurri[0];
+            Console.WriteLine(fiatPunto.GetNombre());
+            // El polimorfismo se puede usar con interfaces
+            INombrable fiatNombrable = /*(INombrable)*/ fiatPunto;
+            INombrable fiatENombrable = (CocheElectrico) popurri[1];
+            fiatNombrable.Nombre = "Fiat - Punto Version 1034";
+            fiatENombrable.Nombre = "Fiat - Electric";
+            Console.WriteLine(fiatNombrable.Nombre);
+            Console.WriteLine(fiatENombrable.Nombre);
+
+            
         }
     }
 }
