@@ -6,9 +6,18 @@ namespace Ejemplo01_Singleton
 {
     class GestorTextos
     {
+        static GestorTextos instancia;
+
         private List<string> textos;
 
-        public GestorTextos()
+
+        public static GestorTextos Instancia {
+            get {
+                if (instancia == null) instancia = new GestorTextos();
+                return instancia;
+            }
+        }
+        private GestorTextos()
         {
             textos = new List<string>();
         }

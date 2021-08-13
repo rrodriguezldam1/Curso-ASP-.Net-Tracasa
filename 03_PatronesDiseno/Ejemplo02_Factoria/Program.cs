@@ -9,19 +9,37 @@ namespace Ejemplo02_Factoria
     {
         static void Main(string[] args)
         {
-            Class1 c1 = new Class1();
-            Class1 c2 = new Class1(2);
-            Class1 c3 = new Class1(3, "Tres");
             Console.WriteLine("Vamos a la fabrica!");
-            ClaseFactoria fabrica = new ClaseFactoria();
-            Class1 c4 = fabrica.CrearObjeto();
+            FactoriaProducto fabrica = new FactoriaProducto();
+            List<Producto> lista = fabrica.CrearLista(4);
+            /* lista.Add(fabrica.Crear(1));
+            lista.Add(fabrica.Crear(2));
+            lista.Add(fabrica.Crear(3));
+            lista.Add(fabrica.Crear(4));*/
 
-            List<Class1> lista = new List<Class1>();
-            lista.Add(c1);
-            lista.Add(c2);
-            lista.Add(c3);
-            lista.Add(c4);
+
+            List<Producto> lista2
+                = fabrica.CrearLista(new int[] { 2, 7, 3, 1 });
+            /* List<Producto> lista2 = new List<Producto>();
+            lista2.Add(fabrica.Crear(1));
+            lista2.Add(fabrica.Crear(2));*/
+
+            List<Producto> lista3 = fabrica.CrearLista(3, 7);
+            /*lista3.Add(fabrica.Crear(3));
+            lista3.Add(fabrica.Crear(4));
+            lista3.Add(fabrica.Crear(5));
+            lista3.Add(fabrica.Crear(6));
+            lista3.Add(fabrica.Crear(7));*/
+
             foreach (var item in lista)
+            {
+                Console.WriteLine("Objeto de constructor: " + item);
+            }
+            foreach (var item in lista2)
+            {
+                Console.WriteLine("Objeto de constructor: " + item);
+            }
+            foreach (var item in lista3)
             {
                 Console.WriteLine("Objeto de constructor: " + item);
             }

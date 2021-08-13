@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ejemplo03_MVC
 {
-    class ModeloEjemplo
+    class ModeloEjemplo: IModeloEjemplo
     {
         private List<Ejemplo> ejemplos;
 
@@ -13,7 +13,7 @@ namespace Ejemplo03_MVC
             ejemplos = new List<Ejemplo>();
         }
 
-        public void Nuevo(Ejemplo ejemplo)
+        public void Crear(Ejemplo ejemplo)
         {
             ejemplos.Add(ejemplo);
         }
@@ -29,6 +29,16 @@ namespace Ejemplo03_MVC
                     return ejemplo;
             }
             return null;
+        }
+
+        public void Crear(int entero, string str)
+        {
+            Crear(new Ejemplo(entero, str));
+        }
+
+        IEnumerable<Ejemplo> IModeloEjemplo.LeerTodos()
+        {
+            return LeerTodos();
         }
     }
 }

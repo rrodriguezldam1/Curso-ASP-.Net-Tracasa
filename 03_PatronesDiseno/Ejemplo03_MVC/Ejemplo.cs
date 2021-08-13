@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ejemplo03_MVC
 {
-    class Ejemplo
+    public class Ejemplo
     {
         int entero;
         string str;

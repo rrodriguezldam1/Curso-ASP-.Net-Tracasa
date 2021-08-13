@@ -6,15 +6,17 @@ namespace Ejemplo03_MVC
     {
         static void Main(string[] args)
         {
-            ModeloEjemplo model1 = new ModeloEjemplo();
-            model1.Nuevo(new Ejemplo(1, "Uno"));
-            model1.Nuevo(new Ejemplo(2, "Dos"));
-            model1.Nuevo(new Ejemplo(3, "Tres"));
+            IModeloEjemplo model1 = new ModeloEjemDiccionario();
+            //IModeloEjemplo model2 = new ModeloEjemplo();
+            model1.Crear(1, "Uno");
+            model1.Crear(2, "Dos");
+            model1.Crear(3, "Tres");
 
             VistaEjemplo ve = new VistaEjemplo(model1);
+            ve.AltaEjemplo();
             ve.MostrarEjemplos();
-            ve.MostrarUno("Tres");
-            ve.MostrarUno("Estres");
+            /*ve.MostrarUno("Tres");
+            ve.MostrarUno("Estres");*/
         }
     }
 }

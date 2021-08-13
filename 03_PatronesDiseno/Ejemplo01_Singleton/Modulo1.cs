@@ -4,9 +4,9 @@ namespace Ejemplo01_Singleton
 {
     class Modulo1
     {
-        static void Main(string[] args)
+        public static void Main2(string[] args)
         {
-            GestorTextos gt = new GestorTextos();
+            GestorTextos gt = GestorTextos.Instancia;
             gt.Nuevo("AAAAA");
             gt.Nuevo("BBB");
             gt.Nuevo("CCCC");

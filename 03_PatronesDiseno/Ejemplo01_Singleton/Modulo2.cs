@@ -4,13 +4,13 @@ namespace Ejemplo01_Singleton
 {
     class Modulo2
     {
-        static void Main2(string[] args)
+        public static void Main(string[] args)
         {
-            GestorTextos gt = new GestorTextos();
-            gt.Nuevo("DDDD");
-            gt.Nuevo("EEEE");
-            gt.Nuevo("FFFF");
-            gt.Mostrar();
+            GestorTextos.Instancia.Nuevo("DDDD");
+            GestorTextos.Instancia.Nuevo("EEEE");
+            GestorTextos.Instancia.Nuevo("FFFF");
+            GestorTextos.Instancia.Mostrar();
+            Modulo1.Main2(null);
         }
     }
 }
