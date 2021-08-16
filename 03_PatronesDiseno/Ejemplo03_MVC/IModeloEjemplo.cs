@@ -8,5 +8,6 @@ namespace Ejemplo03_MVC
     {
         void Crear(int entero, string str);
         IEnumerable<Ejemplo> LeerTodos();
+        Ejemplo LeerUno(string nombre);
     }
 }

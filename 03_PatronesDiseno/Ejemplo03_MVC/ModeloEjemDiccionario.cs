@@ -34,5 +34,15 @@ namespace Ejemplo03_MVC
             }
             return enumerable;
         }
+
+        public Ejemplo LeerUno(string nombre)
+        {
+            foreach (var item in diccionario)
+            {
+                if (item.Value.Str.Equals(nombre))
+                    return item.Value;
+            }
+            return null;
+        }
     }
 }
