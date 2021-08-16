@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Ejemplo03_MVC
 {
-    class ModeloEjemplo: IModeloEjemplo
+    class ModeloEjemploLista : IModeloEjemplo
     {
         private List<Ejemplo> ejemplos;
 
-        public ModeloEjemplo()
+        public ModeloEjemploLista()
         {
             ejemplos = new List<Ejemplo>();
         }

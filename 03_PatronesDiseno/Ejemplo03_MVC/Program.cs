@@ -7,7 +7,7 @@ namespace Ejemplo03_MVC
         static void Main(string[] args)
         {
             IModeloEjemplo model1 = new ModeloEjemDiccionario();
-            //IModeloEjemplo model2 = new ModeloEjemplo();
+            //IModeloEjemplo model2 = new ModeloEjemploLista();
             model1.Crear(1, "Uno");
             model1.Crear(2, "Dos");
             model1.Crear(3, "Tres");
