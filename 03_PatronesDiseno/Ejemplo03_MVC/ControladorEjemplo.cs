@@ -12,8 +12,8 @@ namespace Ejemplo03_MVC
             this.modelo = modelo;
         }
 
-        public void AltaEjemplo(int entero, string str) {
-            modelo.Crear(entero, str);
+        public Ejemplo AltaEjemplo(int entero, string str) {
+            return modelo.Crear(entero, str);
         }
 
         public IEnumerable<Ejemplo> LeerEjemplos()
@@ -23,6 +23,16 @@ namespace Ejemplo03_MVC
 
         public Ejemplo LeerUno(string nombre) {
             return modelo.LeerUno(nombre);
+        }
+
+        public Ejemplo LeerUno(int entero)
+        {
+            return modelo.LeerUno(entero);
+        }
+
+        public void EliminarUno(string nombre)
+        {
+            modelo.EiminarUno(nombre);
         }
     }
 }

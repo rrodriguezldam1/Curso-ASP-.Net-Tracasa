@@ -12,20 +12,31 @@ namespace Ejemplo03_MVC
             diccionario = new Dictionary<string, Ejemplo>();
         }
 
-        public void Crear(string key, int entero, string str) {
-            diccionario.Add(key, new Ejemplo(entero, str));
+        public Ejemplo Crear(string key, int entero, string str) {
+            Ejemplo ej = new Ejemplo(entero, str);
+            if (diccionario.ContainsKey(key))
+            {
+                ej = null;
+                //diccionario[key] = ej;
+            }
+            else
+            {
+                diccionario.Add(key, ej);
+            }
+            return ej;
         }
 
-        public void Crear(int entero, string str)
+        public Ejemplo Crear(int entero, string str)
         {
-            Crear(str + "-" + entero, entero, str);
+            string clave = str + "-" + entero;
+            return Crear(clave, entero, str);
         }
 
         public void LeerTodos(out Dictionary<string, Ejemplo> todos) {
             todos = diccionario;
         }
 
-        public IEnumerable<Ejemplo> LeerTodos()
+        public IList<Ejemplo> LeerTodos()
         {
             IList<Ejemplo> enumerable = new List<Ejemplo>();
             foreach (var item in diccionario)
@@ -43,6 +54,28 @@ namespace Ejemplo03_MVC
                     return item.Value;
             }
             return null;
+        }
+
+        public Ejemplo LeerUno(int entero)
+        {
+            foreach (var item in diccionario)
+            {
+                if (item.Value.Entero.Equals(entero))
+                    return item.Value;
+            }
+            return null;
+        }
+
+        public void EiminarUno(string nombre)
+        {
+            foreach (var item in diccionario)
+            {
+                if (item.Value.Str.Equals(nombre))
+                {
+                    diccionario.Remove(item.Key);
+                    break;
+                }
+            }
         }
     }
 }

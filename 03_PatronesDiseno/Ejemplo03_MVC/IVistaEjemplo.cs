@@ -6,7 +6,7 @@ namespace Ejemplo03_MVC
 {
     interface IVistaEjemplo
     {
-        void AltaEjemplo();
+        Ejemplo AltaEjemplo();
         void MostrarEjemplos();
         void Menu();
     }

@@ -15,6 +15,7 @@ namespace Ejemplo03_MVC
         }
 
         public string Str { get => str; set => str = value; }
+        public int Entero { get => entero; }
 
         public override string ToString()
         {
