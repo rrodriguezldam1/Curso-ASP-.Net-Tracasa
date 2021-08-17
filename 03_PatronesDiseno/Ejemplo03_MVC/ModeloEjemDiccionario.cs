@@ -78,6 +78,18 @@ namespace Ejemplo03_MVC
             return false;
         }
 
+        public bool Eliminar(int entero)
+        {
+            foreach (var item in diccionario)
+            {
+                if (item.Value.Entero.Equals(entero))
+                {
+                    return diccionario.Remove(item.Key);
+                }
+            }
+            return false;
+        }
+
         public Ejemplo Modificar(string nombreBusq, int entero, string str)
         {
             foreach (var item in diccionario)
@@ -92,6 +104,12 @@ namespace Ejemplo03_MVC
                     
             }
             return null;
+        }
+
+        public Ejemplo Crear(Ejemplo nuevoObj)
+        {
+            throw new NotImplementedException();
+            //TODO: Leer propiedad privada mediante REFLECTION
         }
     }
 }

@@ -37,8 +37,7 @@ namespace Ejemplo03_MVC
 
         public Ejemplo Modificar(string nombreBusq, int entero, string str)
         {
-            Ejemplo ejemplo = modelo.Modificar(nombreBusq, entero, str);
-            return ejemplo = new Ejemplo(entero, str);
+            return modelo.Modificar(nombreBusq, entero, str);
         }
     }
 }

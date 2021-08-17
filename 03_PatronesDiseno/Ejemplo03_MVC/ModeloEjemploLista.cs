@@ -49,7 +49,7 @@ namespace Ejemplo03_MVC
             return null;
         }
 
-        IList<Ejemplo> IModeloEjemplo.LeerTodos()
+        IList<Ejemplo> IModeloGenerico<Ejemplo>.LeerTodos()
         {
             return LeerTodos();
         }
@@ -73,6 +73,18 @@ namespace Ejemplo03_MVC
             int posicion = ejemplos.IndexOf(ejemploAmodificar);
             ejemplos[posicion] = new Ejemplo(entero, str);
             return ejemplos[posicion];
+        }
+
+        public bool Eliminar(int entero)
+        {
+            foreach (Ejemplo ejemplo in ejemplos)
+            {
+                if (ejemplo.Entero == entero)
+                {
+                    return ejemplos.Remove(ejemplo);
+                }
+            }
+            return false;
         }
     }
 }

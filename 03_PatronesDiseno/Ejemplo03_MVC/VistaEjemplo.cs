@@ -24,7 +24,8 @@ namespace Ejemplo03_MVC
                 Console.WriteLine("2.- Mostrar Ejemplo");
                 Console.WriteLine("3.- Mostrar Uno");
                 Console.WriteLine("4.- Eliminar Uno");
-                Console.WriteLine("5.- Salir");
+                Console.WriteLine("5.- Modificar");
+                Console.WriteLine("6.- Salir");
                 Console.WriteLine("=====================");
                 Console.WriteLine("Introduce opción del menú con numero");
                 opc = int.Parse(Console.ReadLine().Trim());
@@ -65,11 +66,11 @@ namespace Ejemplo03_MVC
         private void Modificar()
         {
             Ejemplo ejemplo;
-            Console.WriteLine("Introduce nombre: ");
+            Console.WriteLine("Introduce nombre a buscar: ");
             string nombre = Console.ReadLine().Trim();
-            Console.WriteLine("Introduce entero: ");
+            Console.WriteLine("Introduce un nuevo entero: ");
             int entero = int.Parse(Console.ReadLine().Trim());
-            Console.WriteLine("Introduce nombre: ");
+            Console.WriteLine("Introduce un nuevo nombre: ");
             string str = Console.ReadLine().Trim();
             ejemplo = controladorEjemplo.Modificar(nombre, entero, str);
             if (ejemplo != null) Console.WriteLine(ejemplo.ToString());
