@@ -66,16 +66,32 @@ namespace Ejemplo03_MVC
             return null;
         }
 
-        public void EiminarUno(string nombre)
+        public bool EiminarUno(string nombre)
         {
             foreach (var item in diccionario)
             {
                 if (item.Value.Str.Equals(nombre))
                 {
-                    diccionario.Remove(item.Key);
-                    break;
+                    return diccionario.Remove(item.Key);
                 }
             }
+            return false;
+        }
+
+        public Ejemplo Modificar(string nombreBusq, int entero, string str)
+        {
+            foreach (var item in diccionario)
+            {
+                if (item.Value.Str.Equals(nombreBusq))
+                {
+                    Ejemplo nuevoEjemploModificado = new Ejemplo(entero, str);
+                    string clave = item.Key;
+                    diccionario[clave] = nuevoEjemploModificado;
+                    return nuevoEjemploModificado; // item.Value;
+                }
+                    
+            }
+            return null;
         }
     }
 }

@@ -30,9 +30,15 @@ namespace Ejemplo03_MVC
             return modelo.LeerUno(entero);
         }
 
-        public void EliminarUno(string nombre)
+        public bool EliminarUno(string nombre)
         {
-            modelo.EiminarUno(nombre);
+            return modelo.EiminarUno(nombre);
+        }
+
+        public Ejemplo Modificar(string nombreBusq, int entero, string str)
+        {
+            Ejemplo ejemplo = modelo.Modificar(nombreBusq, entero, str);
+            return ejemplo = new Ejemplo(entero, str);
         }
     }
 }

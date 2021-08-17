@@ -50,11 +50,30 @@ namespace Ejemplo03_MVC
                         Console.WriteLine();
                         break;
                     case 5:
+                        Console.Clear();
+                        Modificar();
+                        Console.WriteLine();
+                        break;
+                    case 6:
                         seguir = false;
                         Console.WriteLine("Gracias por usar este programa.");
                         break;
                 }
             }
+        }
+
+        private void Modificar()
+        {
+            Ejemplo ejemplo;
+            Console.WriteLine("Introduce nombre: ");
+            string nombre = Console.ReadLine().Trim();
+            Console.WriteLine("Introduce entero: ");
+            int entero = int.Parse(Console.ReadLine().Trim());
+            Console.WriteLine("Introduce nombre: ");
+            string str = Console.ReadLine().Trim();
+            ejemplo = controladorEjemplo.Modificar(nombre, entero, str);
+            if (ejemplo != null) Console.WriteLine(ejemplo.ToString());
+            else Console.WriteLine("No se ha encontrado " + nombre);
         }
 
         public Ejemplo AltaEjemplo() {
@@ -90,19 +109,20 @@ namespace Ejemplo03_MVC
             string op = Console.ReadLine().Trim();
             if (int.TryParse(op, out opcion))
             {
+                Ejemplo ejemplo;
                 switch (opcion)
-                {
+                {        
                     case 1:
                         Console.WriteLine("Introduce numero: ");
                         int numero = int.Parse(Console.ReadLine().Trim());
-                        Ejemplo ejem = controladorEjemplo.LeerUno(numero);
-                        if (ejem != null) Console.WriteLine(ejem.ToString());
+                        ejemplo = controladorEjemplo.LeerUno(numero);
+                        if (ejemplo != null) Console.WriteLine(ejemplo.ToString());
                         else Console.WriteLine("No se ha encontrado " + numero);
                         break;
                     case 2:
                         Console.WriteLine("Introduce nombre: ");
                         string nombre = Console.ReadLine().Trim();
-                        Ejemplo ejemplo = controladorEjemplo.LeerUno(nombre);
+                        ejemplo = controladorEjemplo.LeerUno(nombre);
                         if (ejemplo != null) Console.WriteLine(ejemplo.ToString());
                         else Console.WriteLine("No se ha encontrado " + nombre);
                         break;
@@ -113,10 +133,13 @@ namespace Ejemplo03_MVC
             }
         }
         public void EliminarUno() {
+            bool esEliminado = false;
             Console.WriteLine("Eliminar...");
             Console.WriteLine("Introduce nombre: ");
             string nombre = Console.ReadLine().Trim();
-            controladorEjemplo.EliminarUno(nombre);
+            esEliminado = controladorEjemplo.EliminarUno(nombre);
+            if (esEliminado) Console.WriteLine("El ejemplo con nombre " + nombre + " ha sido eliminado");
+            else Console.WriteLine("El ejemplo con nombre " + nombre + " no ha sido encontrado");
         }
     }
 }

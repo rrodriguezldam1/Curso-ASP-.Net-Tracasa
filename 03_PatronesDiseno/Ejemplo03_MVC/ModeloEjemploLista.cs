@@ -54,26 +54,25 @@ namespace Ejemplo03_MVC
             return LeerTodos();
         }
 
-        public void EiminarUno(string nombre)
+        public bool EiminarUno(string nombre)
         {
             foreach (Ejemplo ejemplo in ejemplos)
             {
                 if (ejemplo.Str == nombre)
                 {
-                    ejemplos.Remove(ejemplo);
-                    break;
+                    return ejemplos.Remove(ejemplo);
                 }
             }
+            return false;
         }
 
-        //public Ejemplo Modificar(string nombreBusq, int entero, string str)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //bool IModeloEjemplo.EiminarUno(string nombre)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Ejemplo Modificar(string nombreBusq, int entero, string str)
+        {
+            Ejemplo ejemploAmodificar = LeerUno(nombreBusq);
+            if (ejemploAmodificar == null) return null;
+            int posicion = ejemplos.IndexOf(ejemploAmodificar);
+            ejemplos[posicion] = new Ejemplo(entero, str);
+            return ejemplos[posicion];
+        }
     }
 }
