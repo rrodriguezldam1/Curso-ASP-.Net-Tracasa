@@ -9,7 +9,6 @@ namespace Ejemplo03_MVC
         Tipo Crear(Tipo nuevoObj);
         IList<Tipo> LeerTodos();
         Tipo LeerUno(int entero);
-
         bool Eliminar(int entero);
     }
 }
