@@ -15,14 +15,13 @@
 
 namespace Ejercicio06_Callback_Delegados
 {
-    public delegate float FuncionOperador(float[] operadores);
+    public delegate float FuncionOperador();
     class Program
     {
         static void Main(string[] args)
         {
             //VistaCalculadoraGenerica(Calculadora.Suma, Calculadora.Resta, Calculadora.Multiplicacion, Calculadora.Division);
-            //Console.WriteLine(VistaCalc.PedirArray(Calculadora.CalculaArray));
-            
+            VistaCalc.PedirArray(Calculadora.CalculaArray); 
         }
 
         //static void VistaCalculadora(FuncionOperador operador)

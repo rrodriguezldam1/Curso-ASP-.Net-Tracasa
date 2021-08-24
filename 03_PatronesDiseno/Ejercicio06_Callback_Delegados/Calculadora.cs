@@ -47,20 +47,50 @@ namespace Ejercicio06_Callback_Delegados
             return resul;
         }
 
-        public static float[] CalculaArray()
+        public static float CalculaArray()
         {
             int cantidad;
             do
             {
                 cantidad = Parsear("Cantidad de operandos: ");
-            } while (cantidad == 0);
+            } while (cantidad <= 0);
 
             float[] array = new float[(int)cantidad];
             for (int i = 0; i < cantidad; i++)
             {
                 array[i] = Parsear("Número " + (i + 1) + ": ");
             }
-            return array;
+            return Operar(array);
+        }
+
+        public static float Operar(float[] array)
+        {
+            float resul = 0;
+            string cadena = "";
+            Console.WriteLine("Escoja opción: + - * /");
+            while (cadena.Length == 0)
+            {
+                switch (Console.ReadLine())
+                {
+                    case "+":
+                        resul = Suma(array);
+                        cadena = "done";
+                        break;
+                    case "-":
+                        resul = Resta(array);
+                        cadena = "done";
+                        break;
+                    case "*":
+                        resul = Multiplicacion(array);
+                        cadena = "done";
+                        break;
+                    case "/":
+                        resul = Division(array);
+                        cadena = "done";
+                        break;
+                }
+            }
+            return resul;
         }
 
         static int Parsear(string titulo)
