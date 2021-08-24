@@ -15,103 +15,12 @@
 
 namespace Ejercicio06_Callback_Delegados
 {
-    public delegate float FuncionOperador();
+    public delegate float[] FuncionOperador(float[] arr);
     class Program
     {
         static void Main(string[] args)
         {
-            //VistaCalculadoraGenerica(Calculadora.Suma, Calculadora.Resta, Calculadora.Multiplicacion, Calculadora.Division);
-            VistaCalc.PedirArray(Calculadora.CalculaArray); 
+            Console.WriteLine(VistaCalc.PedirArray(Calculadora.CalculaArray));
         }
-
-        //static void VistaCalculadora(FuncionOperador operador)
-        //{
-        //    float cantidad;
-
-        //    do
-        //    {
-        //        cantidad = Parsear("Cantidad de operandos: ");
-        //    } while (cantidad == 0);
-    
-        //    float[] array = new float[(int)cantidad];
-        //    for (int i = 0; i < cantidad; i++) {
-        //        array[i] = Parsear("Número " + (i + 1) + ": ");
-        //    }
-        //    float resultado = operador(array);
-        //    Console.WriteLine("Resultado: " + resultado);
-        //}
-
-        //static void VistaCalculadoraGenerica(FuncionOperador funSuma, FuncionOperador funResta, FuncionOperador funMulti, FuncionOperador funDiv)
-        //{
-        //    float cantidad;
-        //    FuncionOperador operador;
-        //    operador = funSuma;
-
-        //    do
-        //    {
-        //        cantidad = Parsear("Cantidad de operandos: ");
-        //    } while (cantidad == 0);
-
-        //    float[] array = new float[(int)cantidad];
-        //    for (int i = 0; i < cantidad; i++)
-        //    {
-        //        array[i] = Parsear("Número " + (i + 1) + ": ");
-        //    }
-
-        //    switch (Menu())
-        //    {
-        //        case "SUMA": 
-        //            operador = funSuma;
-        //            break;
-        //        case "RESTA":
-        //            operador = funResta;
-        //            break;
-        //        case "MULTIPLICACION":
-        //            operador = funMulti;
-        //            break;
-        //        case "DIVISION":
-        //            operador = funDiv;
-        //            break;
-        //    }
-
-        //    float resultado = operador(array);
-        //    Console.WriteLine("Resultado: " + resultado);
-        //}
-
-        //static float Parsear(string titulo) {
-        //    float num;
-        //    bool verdad;
-        //    do
-        //    {
-        //        Console.WriteLine(titulo);
-        //        string cadena = Console.ReadLine();
-        //        verdad = float.TryParse(cadena, out num);
-        //    } while (!verdad);
-        //    return num;
-        //}
-
-        //static string Menu() {
-        //    string cadena = "";
-        //    Console.WriteLine("Escoja opción: + - * /");
-        //    while (cadena.Length == 0)
-        //    {
-        //        switch (Console.ReadLine())
-        //        {
-        //            case "+":
-        //                cadena = "SUMA";
-        //                break;
-        //            case "-":
-        //                cadena = "RESTA";
-        //                break;
-        //            case "*":
-        //                cadena = "MULTIPLICACION";
-        //                break;
-        //            case "/":
-        //                cadena = "DIVISION";
-        //                break;
-        //        }
-        //    }
-        //    return cadena;
-        //}
     }
 }
