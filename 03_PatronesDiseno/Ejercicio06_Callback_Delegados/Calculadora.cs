@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Ejercicio06_Callback_Delegados
@@ -11,11 +12,11 @@ namespace Ejercicio06_Callback_Delegados
         {
             float resul = lista[0];
             if (lista.Length <= 1) return resul;
-            for (int i = 1; i < lista.Length; i++)
-            {
-                resul = operacion.Invoke(resul, lista[i]);
-            }
-            return resul;
+            //for (int i = 1; i < lista.Length; i++)
+            //{
+            //    resul = operacion.Invoke(resul, lista[i]);
+            //}
+            return lista.Aggregate(operacion);
         }
     }
 }

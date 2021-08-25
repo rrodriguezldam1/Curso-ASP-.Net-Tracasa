@@ -7,7 +7,7 @@ namespace Ejercicio06_Callback_Delegados
     // public delegate float FuncionArray(float[] arr, FuncionOperacion operacion);
     class VistaCalc
     {
-        public static float PedirArray(Func<float[], Func<float, float, float>, float> callbkCalcArray)
+        public static float PedirArray(Func<float[], Func<float, float, float>, float> funOperar)
         {
             float cantidad;
 
@@ -30,19 +30,19 @@ namespace Ejercicio06_Callback_Delegados
                 switch (Console.ReadLine())
                 {
                     case "+":
-                        resul = callbkCalcArray.Invoke(array, (float a1, float a2) => a1 + a2);
+                        resul = funOperar.Invoke(array, (float a1, float a2) => a1 + a2);
                         cadena = "doneSuma";
                         break;
                     case "-":
-                        resul = callbkCalcArray.Invoke(array, (float a1, float a2) => a1 - a2);
+                        resul = funOperar.Invoke(array, (float a1, float a2) => a1 - a2);
                         cadena = "doneResta";
                         break;
                     case "*":
-                        resul = callbkCalcArray.Invoke(array, (float a1, float a2) => a1 * a2);
+                        resul = funOperar.Invoke(array, (float a1, float a2) => a1 * a2);
                         cadena = "doneMultiplicacion";
                         break;
                     case "/":
-                        resul = callbkCalcArray.Invoke(array, (float a1, float a2) => a1 / a2);
+                        resul = funOperar.Invoke(array, (float a1, float a2) => a1 / a2);
                         cadena = "doneDivision";
                         break;
                 }
