@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio03_Interfaces", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo04_Excepciones", "Ejemplo04_Excepciones\Ejemplo04_Excepciones.csproj", "{07932883-2594-44CD-B200-D95691EEFCDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo05_LibreriaClases", "Ejemplo05_LibreriaClases\Ejemplo05_LibreriaClases.csproj", "{02A1F688-0BEE-460D-A0D0-DF384E6735CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplo05_LibreriaClases", "Ejemplo05_LibreriaClases\Ejemplo05_LibreriaClases.csproj", "{02A1F688-0BEE-460D-A0D0-DF384E6735CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejemplo06_CSharp_Avanzado", "Ejemplo06_CSharp_Avanzado\Ejemplo06_CSharp_Avanzado.csproj", "{94378CC1-E8D0-44B2-BCF6-2DB5871A5AD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{02A1F688-0BEE-460D-A0D0-DF384E6735CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02A1F688-0BEE-460D-A0D0-DF384E6735CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02A1F688-0BEE-460D-A0D0-DF384E6735CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94378CC1-E8D0-44B2-BCF6-2DB5871A5AD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94378CC1-E8D0-44B2-BCF6-2DB5871A5AD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94378CC1-E8D0-44B2-BCF6-2DB5871A5AD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94378CC1-E8D0-44B2-BCF6-2DB5871A5AD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
