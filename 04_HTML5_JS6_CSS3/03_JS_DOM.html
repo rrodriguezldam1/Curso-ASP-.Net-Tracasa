@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="02_Estilos.css"/>
+    <title>Document Object Model</title>
+</head>
+<body>
+    <script>
+        var cabecera = document.createElement("header");
+        var body = document.getElementsByTagName("body")[0];
+        body.appendChild(cabecera);
+        var h1 = cabecera.appendChild(document.createElement("h1"));
+        h1.appendChild(document.createTextNode("Título de la página"));
+        // h1.setAttribute("class", "titulo-pagina");
+        h1.className = "titulo-pagina";
+        // var h2 = cabecera.appendChild(document.createElement("h2"));
+        cabecera.innerHTML = cabecera.innerHTML + "<h2>Titulo secundario</h2>";
+        let usuarios = new Array();
+        usuarios[0] = "Ramón";
+        usuarios[1] = "Imanol";
+        usuarios[2] = "Laura";
+        usuarios[3] = "Sergio";
+        usuarios[4] = "Raquel";
+        let tabla = body.appendChild(document.createElement("table"));
+        tabla.className = "tabla";
+        let thead = body.appendChild(document.createElement("thead"));
+        thead.innerHTML = 
+        `<thead><tr>
+            <th>Nombre</th>
+            <th>Numero</th>
+        </tr></thead>`;
+        tabla.appendChild(thead);
+        tabla.children[0].children[0].className = "tabla-cabecera";
+        let tbody = tabla.appendChild(document.createElement("tbody"));
+        for (let i = 0; i < usuarios.length; i++) {
+            let nodoTexto = tbody.appendChild(
+                document.createElement("tr")).appendChild(
+                    document.createElement("td")).appendChild(
+                        document.createTextNode(usuarios[i])
+            );
+            let tr = nodoTexto.parentElement.parentElement;
+                tr.appendChild(
+                    document.createElement("td")).appendChild(
+                        document.createTextNode("Num " + (i + 1))
+            );
+            if (i % 2 === 1) { tr.className = "tabla-pares"}
+        }
+    </script>
+</body>
+</html>

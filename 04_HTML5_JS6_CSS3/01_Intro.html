@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro HTML</title>
+</head>
+
+<body>
+    <h1>Intro HTML</h1>
+    <h2>Encabezado secundario</h2>
+    <h3>Encabezado nivel 3</h3>
+    <div>
+        <h6>Ultimo nivel encabezado 6</h6>
+    </div>
+    <br />
+    <script>
+        // JavaScript es un lenguaje Interpretado. Según se lee, se convierte en 
+        // código binario, y se ejecuta inmediatamente.
+        document.writeln("<div>\n\n<input   type='button'  value='Pulsame' onclick='btnPulsado(1)'/></div>");
+        var numero = 10.12345678901234567890123;    // Sólo existe el tipo number
+        document.writeln("numero = " + numero + " tipo: " + typeof(numero));
+        var texto = "cadena de texto";
+        document.writeln("<br>Texto: " + texto + " Mayus: " + texto.toUpperCase());
+    </script>
+    <label>Etiqueta para input</label>        <input type="text"/>
+    <br>
+    <script>
+        document.writeln("¿Texto? = " + texto);
+        function funcionGlobal() {
+            {
+                var variableLocal = "variableLocal";
+                let variableBloque = "Var de bloque";
+            }
+            variableGlobal = "Soy global por no llevar var";
+            document.writeln("<br>variableLocal? = " + variableLocal);
+            if (typeof(variableBloque) == "undefined")
+                document.writeln("<br>variableBloque SIN DEFINIR");
+            else
+                document.writeln("<br>variableBloque? = " + variableBloque);
+        }
+        funcionGlobal();
+        document.writeln("<br>variableGlobal? = " + variableGlobal);
+        document.writeln("<br>variableLocal? = " + variableLocal);
+        function btnPulsado(numero) {
+            console.log("Boton pulsado = " + numero );
+        }
+    </script>
+</body>
+
+</html>

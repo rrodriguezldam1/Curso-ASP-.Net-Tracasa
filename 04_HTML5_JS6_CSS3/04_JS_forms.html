@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="04_JS_forms.css"/>
+</head>
+<body>
+    <h1>Lectura formulario:</h1>
+    <form>
+
+        <fieldset>
+         <legend>Información Personal</legend>
+         <div> 
+            <label> Nombre: </label> <input id='nombre' type='text' tabindex='1'>
+         </div>
+         <div> 
+            <label> Edad: </label> <input id='edad' type='number' tabindex='2' min="5" max="199" step="5">
+         </div>
+         <div> 
+            <label> Altura: </label> <input id='altura' type='number' tabindex='3'>
+         </div>
+        </fieldset>
+       
+        <fieldset>
+         <legend>edad</legend>
+         <input type='checkbox' tabindex='20'
+                   name='edad' value='20-39' > 20-39
+         <input type='checkbox' tabindex='21'
+                   name='edad' value='40-59' > 40-59
+         <input type='checkbox' tabindex='22'
+                   name='edad' value='60-79' > 60-79
+        </fieldset>
+       
+        <div>
+            <input id="btn-anadir" type="button" value="Añadir"/>
+        </div>
+       </form>
+
+       <br>
+       <div>
+        <input id="url" type="url"  tabindex='40' value="Http://www."/>
+        <input id="btn-ir" type="button" value="Ir"/>
+    </div>
+    <script src="04_JS_forms.js"></script>
+</body>
+</html>

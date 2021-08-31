@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="02_Estilos.css"/>
+    <title>Estructura doc HTML5</title>
+</head>
+<body>
+    <header>
+        <h1 class="titulo-pagina">Dispositivo Móviles de Huawei</h1>
+    </header>
+    <section>
+        <h1 class="titulo-seccion">Huawei Mate 20</h1>
+        <img src="images\huawei-mate-20-negro.jpg" alt="Huawei Mate 20">
+        <p id="13"></p>
+        <article>
+            <h1 class="titulo-articulo">Colores:</h1>
+            <button onclick="funcionGlobal(1)">Azul</button>
+            <button onclick="funcionGlobal(2)">Negro</button>
+        </article>
+        <article>
+            <h1 class="titulo-articulo">Características:</h1>
+            <ul>Móvil Dual SIM</ul>
+            <ul>6,53 pulgadas</ul>
+            <ul>Resolución de pantalla Full HD</ul>
+            <ul>12 megapíxeles</ul>
+            <h2>Especificaciones:</h2>
+            <table class="tabla">
+                <p><b><u>Huawei Mate 20</u></b></p>
+                <thead>
+                    <tr>
+                        <th>RAM</th>
+                        <th>Almacenamiento</th>
+                        <th>Batería</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4 GB</td>
+                        <td>128 GB</td>
+                        <td>4.000 mAh</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+    <footer> 
+        Copyleft <date>2021</date> - Rmaón Rodríguez - <address>Calle Cabárceno 5, Tracasa</address>
+    </footer>
+    <script>
+        function funcionGlobal(num) {
+            if (num == 1) {
+            document.getElementById("13").innerHTML = "Has seleccionado en azul"
+            } else {
+                document.getElementById("13").innerHTML = "Has seleccionado en negro"
+            }
+        }
+    </script>
+</body>
+</html>

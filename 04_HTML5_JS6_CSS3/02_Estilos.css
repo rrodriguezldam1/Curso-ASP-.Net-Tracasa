@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 10px;
+    background-color: ghostwhite;
+}
+
+header, section, footer {
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+section h1 {
+    font-size: 1.6em;
+}
+
+.titulo-pagina {
+    font-size: 1.2em;
+}
+
+.titulo-seccion {
+    font-size: 1.1em;
+}
+
+.titulo-ariculo {
+    font-size: 1em;
+}
+
+.tabla {
+    border: green 1px solid ;
+    padding: 0.1px;
+}
+
+.tabla th {
+    border: blueviolet 2px solid ;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tabla td {
+    border: blue 2px solid ;
+    text-align: center;
+    
+}
+
+h2 {
+    font-size: 1em;
+}
+
+.tabla-cabecera {
+    background-color: darkblue;
+}
+
+.tabla-pares {
+    background-color: blueviolet;
+}
