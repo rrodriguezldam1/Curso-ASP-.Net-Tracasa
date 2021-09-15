@@ -388,3 +388,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+/08_NUnit_Selenium/FirefoxPortable
