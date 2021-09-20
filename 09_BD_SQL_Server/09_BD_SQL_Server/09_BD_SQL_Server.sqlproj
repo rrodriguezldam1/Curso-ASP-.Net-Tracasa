@@ -59,5 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Usuario.sql" />
+    <Build Include="Usuario_SQLQuery.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Usuario.data.sql" />
   </ItemGroup>
 </Project>
