@@ -43,15 +43,17 @@
 --            HAVING COUNT(*)>1
 --);
 
-SELECT top 1 * FROM Usuario
-WHERE coche is not null
-order by edad desc;
+--SELECT top 1 * FROM Usuario
+--WHERE coche is not null
+--order by edad desc;
 
-SELECT top 1 * FROM Usuario
-WHERE coche is null and activo = 0
-order by edad;
+--SELECT top 1 * FROM Usuario
+--WHERE coche is null and activo = 0
+--order by edad;
 
-select avg(edad) as'Edad Media Inactivos' from usuario where activo = 0;
-select avg(edad) as 'Edad Media Activos' from usuario where activo = 1;
-select avg(edad) as 'Edad Media Sin Coche' from usuario where coche is null;
-select avg(edad) as 'Edad Media Con Coche' from usuario where coche is not null;
+--select avg(edad) as'Edad Media Inactivos' from usuario where activo = 0;
+--select avg(edad) as 'Edad Media Activos' from usuario where activo = 1;
+--select avg(edad) as 'Edad Media Sin Coche' from usuario where coche is null;
+--select avg(edad) as 'Edad Media Con Coche' from usuario where coche is not null;
+
+--CREATE INDEX [IX_Nombre_usuario] ON [dbo].[Usuario] (Nombre);
