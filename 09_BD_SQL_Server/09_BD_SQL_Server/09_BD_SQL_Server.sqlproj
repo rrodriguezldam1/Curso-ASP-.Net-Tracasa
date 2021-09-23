@@ -60,6 +60,7 @@
   <ItemGroup>
     <Build Include="Usuario.sql" />
     <Build Include="Usuario_SQLQuery.sql" />
+    <Build Include="SQLQuery_joins.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Usuario.data.sql" />

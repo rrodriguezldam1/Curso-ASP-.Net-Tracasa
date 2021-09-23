@@ -44,16 +44,16 @@ from Usuario u inner join CompraUsuarioProducto c on u.id = c.IdUsuario
 where c.Fecha between '01/01/2019' and '01/01/2020';
 
 --7 - Qué productos se han vendido mejor a lo largo del 2018, 2019 y 2020
-select p.nombre
+select p.nombre, count(p.Nombre) Compradores
 from Producto p inner join CompraUsuarioProducto c on p.id = c.IdProducto
 where c.Fecha > '01/01/2018' and c.Fecha < '01/01/2020'
-order by c.Cantidad;
+group by p.Nombre
+order by Compradores desc;
 
 --8 - El coche cuyo propietario ha comprado más a lo largo de la historia
 declare @aux_id int
 declare @aux_mayorCant int
 declare @aux_mayorId int
-declare @marca varchar
 declare cur_u cursor for select c.IdUsuario from CompraUsuarioProducto c
 
 set @aux_mayorCant = 0
@@ -68,12 +68,10 @@ begin
 	begin
 		   set @aux_mayorCant = (select sum(com.Cantidad) from CompraUsuarioProducto com where com.IdUsuario = @aux_id group by com.IdUsuario)
 		   set @aux_mayorId = (select com.IdUsuario from CompraUsuarioProducto com where com.IdUsuario = @aux_id group by com.IdUsuario)
-		   print cast(@aux_mayorId as varchar) + ' ha comprado ' + cast(@aux_mayorCant as varchar)
 	end
 	fetch next from cur_u into @aux_id
 	if @@FETCH_STATUS != 0
 	begin
-		print cast(@aux_mayorId as varchar) + ' ha sido el mayor comprador ';
 		select c.Marca, c.Modelo from Coche c inner join Usuario u on c.Id = u.idCoche where u.Id = @aux_mayorId;
 	end
 end
