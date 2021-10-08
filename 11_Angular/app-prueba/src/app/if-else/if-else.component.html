@@ -1,0 +1,5 @@
+<p><input type="button" value="Aumentar" (click)="alPulsarBoton()"> Pulsado {{contadorComp}} veces </p> 
+<span>Cambia el valor: </span><input type="number" [(ngModel)]="contadorComp">
+
+<div *ngIf="contadorComp%2===0"> El contador es par</div>
+<div *ngIf="contadorComp%2===1"> El contador es impar</div>

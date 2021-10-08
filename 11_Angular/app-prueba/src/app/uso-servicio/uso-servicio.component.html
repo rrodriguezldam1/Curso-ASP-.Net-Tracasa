@@ -1,0 +1,11 @@
+<h2>Uso servicio works:</h2>
+<button (click)="srvEj.activar(!srvEj.siActivado())">
+    {{ srvEj.siActivado() ? "Desactivar" : "Activar" }}
+</button>
+
+<p *ngIf="srvEj.siActivado(); else desactivado">Activado</p>
+<ng-template #desactivado><p>Desactivado</p></ng-template>
+
+<ul>
+    <li *ngFor="let wf of srvEj.climaArray()">{{ wf.summary }} {{ wf.temperatureC }}</li>
+</ul>
